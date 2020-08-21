@@ -6,11 +6,17 @@ import (
 	"net/http"
 )
 
+func setHeaders(w http.ResponseWriter) {
+
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+
+}
+
 // ServeJSON sets common headers for serving JSON data
 func ServeJSON(w http.ResponseWriter, r *http.Request, b []byte) (int, error) {
 
+	setHeaders(w)
 	w.Header().Set("Content-Type", "application/json")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	wlen, err := w.Write(b)
 

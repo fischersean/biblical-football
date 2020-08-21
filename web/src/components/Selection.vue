@@ -77,7 +77,7 @@ export default {
       }
       return rDict;
     };
-    fetch('http://api.localhost:5000/seasonsmeta')
+    fetch('http://' + this.apiPath +'/seasonsmeta')
       .then(response => response.json())
       .then(data => {
         this.seasonsMetaData = flattenMeta(data);
@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     goJuice() {
-      let url = new URL('http://api.localhost:5000/weekverses'),
+      let url = new URL('http://' +  this.apiPath + '/weekverses'),
         params = {
           book: this.bookSelect,
           season: this.seasonSelect,
@@ -124,6 +124,11 @@ export default {
         return [];
       }
     },
+    apiPath(){
+      var base = window.location.host;
+      var domain = base.split(".")[1];
+      return "api." + domain;
+    }
   },
 };
 </script>
