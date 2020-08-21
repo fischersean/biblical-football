@@ -11,7 +11,7 @@
       </p>
     </div>
 <footer class="footer has-background-white py-6">
-  <p><a href=https://sean-fischer.mit-license.org target="_blank">MIT</a> - <a href=# target="_blank">Source</a></p> 
+  <p><a href=https://sean-fischer.mit-license.org target="_blank">MIT</a> - <a href=https://github.com/fischersean/biblical-football target="_blank">Source</a></p> 
   <p><b>Made with ❤️  by <a href=https://github.com/fischersean target="_blank">Sean Fischer </a> </b></p> 
   <p>This is a joke</p>
 </footer>
