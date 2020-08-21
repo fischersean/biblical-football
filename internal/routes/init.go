@@ -7,9 +7,15 @@ import (
 	"net/http"
 )
 
+func healthCheck(w http.ResponseWriter, r *http.Request) {
+	b := []byte("OK")
+	w.Write(b)
+}
+
 // initAPI creates the routes for the app's api
 func initAPI() {
 
+	http.Handle("/", utils.Logged(healthCheck))
 	http.Handle("/seasonsmeta", utils.Logged(getSeasonsMeta))
 	http.Handle("/bibleverse", utils.Logged(getVerse))
 	http.Handle("/weekverses", utils.Logged(getWeekVerses))
@@ -23,7 +29,6 @@ func initStaticFS(directory string) {
 	//log.Println("Creating FileServer @ " + directory)
 	//fs := http.FileServer(http.Dir(directory))
 	//http.Handle("/static/", http.StripPrefix("/static/", fs))
-	//http.Handle("/", utils.LoggedHandler(fs))
 }
 
 // InitServer - Create routes and begin listening on provided port
