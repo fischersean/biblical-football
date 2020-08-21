@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+    # Proxies based on post here: https://dev.to/kevbradwick/how-to-setup-a-reverse-proxy-to-your-host-machine-using-docker-mii
+# nginx reverse proxy to enable the api and front end to be served from the
+  # same host:port.
+  # http://api.localhost:5000 -> dockerhost:8000
+  # http://web.localhost:5000 -> dockerhost:8080
+  #proxy:
+    #image: nginx:alpine
+    #ports:
+      #- "5000:80"
+    #volumes:
+      #- "./docker/web.conf:/etc/nginx/conf.d/web.conf:ro"
+      #- "./docker/api.conf:/etc/nginx/conf.d/api.conf:ro"
+
+  api:
+    build: .
+    #volumes:
+      #- ./web:/go/src/app/web
+    ports:
+      - 8000:8000
