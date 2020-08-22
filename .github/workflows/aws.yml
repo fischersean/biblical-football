@@ -73,7 +73,7 @@ jobs:
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
         task-definition: ecs-task-definition.json
-        container-name: biblefootball
+        container-name: biblescores
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
