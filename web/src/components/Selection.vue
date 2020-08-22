@@ -77,7 +77,7 @@ export default {
       }
       return rDict;
     };
-    fetch('http://' + this.apiPath + '/seasonsmeta')
+    fetch('https://' + this.apiPath + '/seasonsmeta')
       .then(response => response.json())
       .then(data => {
         this.seasonsMetaData = flattenMeta(data);
