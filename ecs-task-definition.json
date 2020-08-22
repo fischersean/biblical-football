@@ -26,7 +26,7 @@
       "linuxParameters": null,
       "cpu": 0,
       "environment": [],
-      "resourceRequirements": nul,
+      "resourceRequirements": null,
       "ulimits": null,
       "dnsServers": null,
       "mountPoints": [],
