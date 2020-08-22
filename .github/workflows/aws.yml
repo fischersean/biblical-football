@@ -53,7 +53,7 @@ jobs:
       id: build-image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: 261392311630.dkr.ecr.us-east-2.amazonaws.com/biblefootball
+        ECR_REPOSITORY: biblefootball
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
